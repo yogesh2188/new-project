@@ -1,16 +1,16 @@
 Create EKS Cluster with two worker nodes using eksctl
 
-   eksctl create cluster --name demo-eks --region us-east-1 --nodegroup-name my-nodes --node-type t3.small --managed --nodes 2 
+   eksctl create cluster --name demo-eks --region ap-south-1 --nodegroup-name my-nodes --node-type t3.small --managed --nodes 2 
 
 the above command should create a EKS cluster in AWS, it might take 15 to 20 mins. The eksctl tool uses CloudFormation under the hood, creating one stack for the EKS master control plane and another stack for the worker nodes. 
 
-   eksctl get cluster --name demo-eks --region us-east-1
+   eksctl get cluster --name demo-eks --region ap-south-1
 
 This should confirm that EKS cluster is up and running.
 
 Update Kube config by entering below command:
 
-     aws eks update-kubeconfig --name demo-eks --region us-east-1
+     aws eks update-kubeconfig --name demo-eks --region ap-south-1
 
 kubeconfig file be updated under /var/lib/jenkins/.kube folder.
 
